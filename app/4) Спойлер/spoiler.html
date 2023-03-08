@@ -5,27 +5,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Название сайта</title>
-	<link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
-	<!-- Styles -->
-	<!-- build:css -->
-	<!-- Все стили помещаются внтурь комментария build -->
-	<!-- Slick slider CSS -->
-	<link rel="stylesheet" href="libs/slick-slider/slick.css">
-	<!-- Fontawesome -->
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<!-- Magnific Popup CSS -->
-	<link rel="stylesheet" href="libs/magnific-popup/magnific-popup.css">
-	<!-- Google Fonts roboto -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900|Rubik:500,700,900&subset=latin,cyrillic" rel="stylesheet">
-	<!-- Базовые стили CSS -->
-	<!-- <link rel="stylesheet" href="css/main.css"> -->
-	<link rel="stylesheet" href="css/spoiler1.css">
-	<!-- endbuild -->
+    <link rel="stylesheet" href="../reset.css">
 </head>
 
 
+
+
+<!-- Что подключить -->
+<script src="spoiler.js"></script>
+<!-- Компонент -->
 <body>
-	
     <div class="accordion">
         <button class="accordion__control" aria-expanded="false">
             <span class="accordion__title">Accordion 1</span>
@@ -75,20 +64,53 @@
 
 
 
-
-	<!-- build:js -->
-	<!-- jQuery -->
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<!-- fa -->
-	<script src="https://kit.fontawesome.com/9d2ac34ab6.js" crossorigin="anonymous"></script>
-	<!-- Slick slider JS -->
-	<script src="libs/slick-slider/slick.min.js"></script>
-	<!-- Magnific Popup JS -->
-	<script src="libs/magnific-popup/jquery.magnific-popup.min.js"></script>
-	<!-- Базовые скрипты javascript -->
-	<!-- <script src="js/main.js"></script> -->
-	<script src="js/spoiler1.js"></script>
-	<!-- endbuild -->
+<style>
+    .accordion__control {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        cursor: pointer;
+    }
+    .accordion__content {
+        border: 1px solid #888;
+        border-top: 1px solid transparent;
+    }
+    .accordion__content {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        will-change: max-height;
+        transition: all 0.3s ease-out;
+        box-sizing: content-box;
+    }
+    .open .accordion__content {
+        opacity: 1;
+    }
+    .accordion__icon {
+        position: relative;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+    }
+    .accordion__icon svg {
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: 0.2s ease;
+    }
+    .accordion__icon-close {
+        opacity: 0;
+    }
+    .accordion.open .accordion__icon-close {
+        opacity: 1;
+    }
+    .accordion.open .accordion__icon-open {
+        opacity: 0;
+    }
+</style>
 </body>
 
 </html>
