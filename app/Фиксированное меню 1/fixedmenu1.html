@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Фиксированное меню</title>
+    <link rel="stylesheet" href="../reset.css">
+</head>
+
+
+
+
+
+
+
+
+
+<!-- Что подключить -->
+<script src="scroll-lock.min.js"></script>
+<script src="fixedmenu1.js"></script>
+<!-- Компонент -->
+<body>
+	<header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="header__part">
+                    Logo
+                </div>
+                <div class="header__part">
+                    <nav class="menu">
+                        <ul class="menu__box">
+                            <li class="menu__list">
+                                <a href="#" class="menu__item">Menu 1</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="#" class="menu__item">Menu 1</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="#" class="menu__item">Menu 1</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="#" class="menu__item">Menu 1</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="#" class="menu__item">Menu 1</a>
+                            </li>
+                        </ul>
+						<div class="menu__close">
+                            X
+							<!-- <svg class="menu__close-svg">
+								<use xlink:href="img/svg-ui-sprite.svg#xmark-solid"></use>
+							</svg> -->
+						</div>
+                    </nav>
+                </div>
+				<div class="burger-icon">
+                    |||
+					<!-- <svg class="burger-icon__svg">
+						<use xlink:href="img/svg-ui-sprite.svg#bars-solid"></use>
+					</svg> -->
+				</div>
+            </div>
+        </div>
+    </header>
+    <section class="sec1"></section>
+	<section class="sec2"></section>
+	<section class="sec3"></section>
+	<section class="sec4"></section>
+    <!-- Компонент конец -->
+</body>
+<style>
+    .header__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu__box {
+        display: flex;
+        align-items: center;
+    }
+    @media (max-width: 991px) {
+        .menu {
+            transition: 0.2s ease;
+            position: fixed;
+            right: 0;
+            top: -100vh;
+            width: 100vw;
+            height: 100vh;
+            background: gray;
+            overflow-y: auto;
+        }
+    }
+    @media (max-width: 991px) {
+        .menu--open {
+            top: 0vh;
+        }
+    }
+    .burger-icon {
+        cursor: pointer;
+    }
+
+    .burger-icon svg {
+        width: 30px;
+    }
+
+    .menu__close {
+        display: none;
+    }
+    @media (max-width: 991px) {
+        .menu__close {
+            display: block;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+    }
+    .burger-icon {
+        display: none;
+    }
+    @media (max-width: 991px) {
+        .burger-icon {
+            display: block;
+        }
+    }
+    .header_fixed{
+        position: sticky;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        animation: showElement;
+        animation-duration: 0.5s;
+        background: #fff;
+    }
+
+    @keyframes showElement{
+        0% {
+            opacity: 0;
+            top: -70px;
+        }
+        
+        100% {
+            opacity: 1;
+            top: 0;
+        }
+    }
+    .sec1 {
+        height: 250px;
+        background: paleturquoise;
+    }
+    .sec2 {
+        height: 250px;
+        background: #ccc;
+    }
+
+    .sec3 {
+        height: 250px;
+        background: rebeccapurple;
+    }
+    .sec4 {
+        height: 250px;
+        background: aquamarine;
+    }
+</style>
+</html>
