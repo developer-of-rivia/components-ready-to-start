@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	  
 		// Navigation arrows
 		navigation: {
-		  nextEl: '.swiper-button-next',
-		  prevEl: '.swiper-button-prev',
+		  nextEl: '.example-slider__next',
+		  prevEl: '.example-slider__prev',
 		},
 	});
 	
