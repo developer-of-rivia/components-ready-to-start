@@ -1,0 +1,45 @@
+.header__wrapper
+  display: flex
+  justify-content: space-between
+.menu__box
+  display: flex
+  align-items: center
+@media (max-width: 991px)
+  .menu
+    transition: 0.2s ease
+    position: fixed
+    right: 0
+    top: -100vh
+    width: 100vw
+    height: 100vh
+    background: gray
+    overflow-y: auto
+
+@media (max-width: 991px)
+  .menu--open
+    top: 0vh
+
+.burger-icon
+  cursor: pointer
+
+.burger-icon svg
+  width: 30px
+
+.menu__close
+  display: none
+
+@media (max-width: 991px)
+  .menu__close
+    display: block
+    position: absolute
+    right: 15px
+    top: 15px
+
+.burger-icon
+  display: none
+
+@media (max-width: 991px)
+  .burger-icon
+    display: block
+.menu__box
+  height: 1500px

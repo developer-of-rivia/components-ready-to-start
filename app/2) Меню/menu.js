@@ -1,5 +1,4 @@
-$(document).ready(function () {
-
+document.addEventListener('DOMContentLoaded', function() {
     let burgerIcon = document.querySelector('.burger-icon');
     let closeIcon = document.querySelector('.menu__close');
     let menu = document.querySelector('.menu');
@@ -13,5 +12,4 @@ $(document).ready(function () {
         menu.classList.remove('menu--open');
         scrollLock.enablePageScroll(scrollObject);
     })
-	
-});
+}, false);
