@@ -1,0 +1,19 @@
+.accordion
+  display: inline-block
+  text-align: left
+  margin: 1%
+  width: 70%
+.accordion.open
+    .accordion-content
+      max-height: 3000px
+
+.accordion-content
+  transition: max-height 1s
+  overflow: hidden
+  max-height: 0
+
+.accordion-inner
+  padding: 0 15px
+
+.accordion-toggle  
+  display: flex

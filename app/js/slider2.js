@@ -1,0 +1,28 @@
+$(document).ready(function () {
+
+    // слайдер
+    $('.slider__object').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrow: true,
+        prevArrow: '<div class="slick-prev example__slider-prev"><svg><use xlink:href="img/svg-ui-sprite.svg#left-ungle"></use></svg></div>',
+        nextArrow: '<div class="slick-next example__slider-prev"><svg><use xlink:href="img/svg-ui-sprite.svg#right-ungle"></use></svg></div>',
+        responsive: [
+            {
+                breakpoint: 1210,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    dots: true,
+                    arrow: true,
+                }
+            },
+        ]
+    });
+	
+});

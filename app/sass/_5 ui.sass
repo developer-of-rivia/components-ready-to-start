@@ -1,0 +1,185 @@
+@import "1 vars.sass"
+@import "2 media-mix.sass"
+/* Элементы формы */
+// button
+.button
+    transition: 0.2s ease
+    border-radius: 5px
+.button--disabled
+    background: #DEDBE1
+    color: #7E7984
+    cursor: default
+// button--color
+.button--color-default
+    background: #612BD3
+    color: #fff
+    &:hover
+        background: #5126AC
+.button--color-dark
+    background: #391881
+    color: #fff
+    &:hover
+        background: #612BD3
+.button--color-pink
+    background: #F5F0FF
+    color: #612BD3
+    &:hover
+        background: #EEE5FF
+// button--size
+.button--size-small
+    padding: 8px 16px
+    font-size: 14px
+.button--size-regular
+    padding: 10px 18px
+    font-size: 16px
+.button--size-medium
+    padding: 10px 20px
+    font-size: 18px
+.button--size-large
+    padding: 12px 24px
+    font-size: 20px
+// button--style
+.button--style-bordered
+    border: 3px solid
+// field--default (input, textarea)
+.field--def
+    display: inline-block
+    width: 100%
+    height: 100%
+// цвет placeholder у input, textarea
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
+    color: #000
+input::-moz-placeholder, textarea::-moz-placeholder
+    color: #000
+input:-moz-placeholder, textarea:-moz-placeholder
+    color: #000
+input:-ms-input-placeholder, textarea:-ms-input-placeholder
+    color: #000
+
+/* Чекбокс */
+// Контейнер
+.checkbox
+    display: flex
+    align-items: center
+    width: 100%
+// Сам квадратик
+.checkbox input[type=checkbox]
+    -webkit-appearance: none
+    -moz-appearance: none
+    display: inline-block
+    width: 22px
+    height: 22px
+    cursor: pointer
+    border: 1px solid #ccc
+    margin-right: 10px
+// При наводке
+.checkbox input[type=checkbox]:hover
+    display: inline-block
+// Нажатый
+.checkbox input[type=checkbox]:checked
+    background: url(../img/checkbox-checkmark.png) no-repeat center center
+// Отключённые (можно использовать даже с checked)
+.checkbox input[type=checkbox]:disabled
+    filter: grayscale(80%)
+
+/* Радио кнопка */
+// отключаем инпут
+.radio input[type=radio]
+    display: none
+// обёртка для кнопки и текста
+.radio label
+    display: flex
+    align-items: center
+    color: green
+// кружочек
+.radio label:before
+    content: ""
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 18px
+    height: 18px
+    border-radius: 50px
+    border: 1px solid #ccc
+// Нажатый
+.radio input[type=radio]:checked + label:before
+    background: url(../img/checkbox-checkmark.png) no-repeat center center
+// При наводке
+.radio label:hover:before
+    display: inline-block
+// Отключённы
+.radio input[type=radio]:disabled + label:before
+    filter: grayscale(100%)
+    background: red
+
+/* thumbler */
+// поле, в котором будет гоняться ползунок
+.tumbler__switch
+    position: relative
+    display: flex
+    align-items: center
+    width: 36px
+    height: 22px
+    padding: 3px
+    border-radius: 50px
+    vertical-align: top
+    transition: .2s
+    background: #DBDBDB
+    cursor: pointer
+// сам ползунок
+.tumbler__switch:before
+    content: ''
+    display: inline-block
+    width: 16px
+    height: 16px
+    border-radius: 50px
+    background: white
+    transition: .15s
+// скрываем инпут
+.tumbler input[type=checkbox]
+    display: block
+    width: 0
+    height: 0
+    position: absolute
+    z-index: -1
+    opacity: 0
+    // активное поле
+    &:checked+.tumbler__switch
+        background: #75A55F
+    // активный ползунок
+    &:checked+.tumbler__switch:before
+        transform: translateX(14px)
+
+/* select */
+.select__head
+    width: 100%
+    height: 100%
+    border: 1px solid #555
+    display: flex
+    align-items: center
+    padding-left: 20px
+    padding-right: 20px
+.select__head--active
+    .select__ungle
+        transform: rotate(180deg)
+.select__box
+    display: none
+.select__box--active
+    display: block
+.select__item
+    display: flex
+    align-items: center
+    width: 100%
+    height: 30px
+    padding: 5px 20px
+    border: 1px solid #ccc
+.select__ungle
+    margin-left: auto
+.select__item--curent
+    color: red
+
+/* inputfile */
+.upload-has__delete
+    display: none
+.upload-has__delete--open
+    display: block
