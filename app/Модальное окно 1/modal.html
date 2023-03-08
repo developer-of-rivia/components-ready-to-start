@@ -1,46 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Название сайта</title>
-	<link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
-	<!-- Styles -->
-	<!-- build:css -->
-	<!-- Все стили помещаются внтурь комментария build -->
-	<!-- Slick slider CSS -->
-	<link rel="stylesheet" href="libs/slick-slider/slick.css">
-	<!-- Fontawesome -->
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<!-- Magnific Popup CSS -->
-	<link rel="stylesheet" href="libs/magnific-popup/magnific-popup.css">
-	<!-- Google Fonts roboto -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900|Rubik:500,700,900&subset=latin,cyrillic" rel="stylesheet">
-	<!-- Базовые стили CSS -->
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/graph-modal.min.css">
-	<!-- endbuild -->
+	<title>Фиксированное меню</title>
+    <link rel="stylesheet" href="../reset.css">
 </head>
 
 
+
+
+
+
+
+
+
+<!-- Что подключить -->
+<link rel="stylesheet" href="graph-modal.min.css">
+<script src="graph-modal.min.js"></script>
+<!-- Компонент -->
 <body>
-    
-    
-    
-
-
-
-
     <button class="btn-reset modal-btn modal-1" data-graph-path="first" data-graph-animation="fadeInUp" data-graph-speed="500">
         Открыть окно 1
     </button>
     <button class="btn-reset modal-btn modal-2" data-graph-path="ate" data-graph-animation="fadeInUp" data-graph-speed="500">
         Открыть окно 2
     </button>
-
-
-
     <div class="graph-modal">
         <!-- modal1 -->
         <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="first">
@@ -73,78 +58,6 @@
         </div>
     </div>
 
-
-
-
-
-
-    <style>
-        .sec1{
-            background: tomato;
-            height: 400px;
-        }
-        .sec2{
-            background: aqua;
-            height: 400px;
-        }
-        .sec3{
-            background: rebeccapurple;
-            height: 400px;
-        }
-        .sec4{
-            background: olivedrab;
-            height: 400px;
-        }
-        .sec5{
-            background: royalblue;
-            height: 400px;
-        }
-    </style>
-    <section class="sec1"></section>
-    <section class="sec2"></section>
-    <section class="sec3"></section>
-    <section class="sec4"></section>
-    <section class="sec5"></section>
-
-
-
-
-
-
-
-
-    
-
-	<!-- build:js -->
-	<!-- jQuery -->
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<!-- Slick slider JS -->
-	<script src="libs/slick-slider/slick.min.js"></script>
-	<!-- Magnific Popup JS -->
-	<script src="libs/magnific-popup/jquery.magnific-popup.min.js"></script>
-	<!-- Базовые скрипты javascript -->
-	<!-- <script src="js/main.js"></script> -->
-	<script src="js/scroll-lock.min.js"></script>
-	<script src="js/graph-modal.min.js"></script>
-	<!-- endbuild -->
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            let $modalScroll = document.querySelector('.graph-modal');
-            const modal = new GraphModal({
-                isOpen: (modal) => {
-                    console.log('opened');
-                    scrollLock.disablePageScroll($modalScroll);
-                },
-                isClose: () => {
-                    console.log('closed');
-                    scrollLock.enablePageScroll($modalScroll);
-                }
-            });
-            // new GraphModal().open('second');
-        });
-    </script>
 
 </body>
 
